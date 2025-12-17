@@ -7,13 +7,12 @@ def sigmoid(x):
 class Neuron:
     def __init__(self, weights, bias):
         self.bias = bias
-
+        self.weights = weights
     def feedforward(self, inputs):
         # Weight inputs, add bias, then use the activation function
         # Calculates this by finding sum of element-wise products
         # [1, 2, 3]
         # [4, 5, 6]
-        self.weights = weights
         # This would be 1*4, 2*5, and 3*6 respectively
         total = np.dot(self.weights, inputs) + self.bias
         return sigmoid(total)
@@ -69,4 +68,4 @@ x = np.array([2, 3])
 # Essentially, h1 and h2 are getting the x as their inputs, then 
 # o1 gets this outputs as it's input, and the output
 # of the network is the output of o1
-print(network.feedforward(x)) # running function in created neural network: 0.7216325609518421
+print(network.feedforward(x)) # running function in created neural netowkr0.7216325609518421
