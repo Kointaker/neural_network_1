@@ -19,9 +19,8 @@ class Neuron:
         return sigmoid(total)
 # weights and bias set outside of class
 # to allow neuron to function with various
-
-weights = np.array([0, 1]) # w1 = 0, w2 = 1
 # inputs/neural networks
+weights = np.array([0, 1]) # w1 = 0, w2 = 1
 bias = 4                   # b = 4
 n = Neuron(weights, bias) # our neuron now with desired weights and bias
 x = np.array([2, 3])       # x1 = 2, x2 = 3
@@ -43,16 +42,18 @@ class OurNeuralNetwork:
 
     def __init__(self):
         # weights and bias set for this neural network
+        # each neuron will now have these parameters
+        # when calculating output
         weights = np.array([0, 1])
         bias = 0
 
-        # Active neurons in this network
+        # Activated neurons in this network with parameters
         self.h1 = Neuron(weights, bias)
         self.h2 = Neuron(weights, bias)
         self.o1 = Neuron(weights, bias)
-
+    # Function inside OurNeuralNetwork
     def feedforward(self, x):
-        # Both h1 neurons get two inputs
+        # Both h1 & h2 neurons get two ff inputs
         out_h1 = self.h1.feedforward(x)
         out_h2 = self.h2.feedforward(x)
 
@@ -68,4 +69,4 @@ x = np.array([2, 3])
 # Essentially, h1 and h2 are getting the x as their inputs, then 
 # o1 gets this outputs as it's input, and the output
 # of the network is the output of o1
-print(network.feedforward(x)) # 0.7216325609518421
+print(network.feedforward(x)) # running function in created neural network: 0.7216325609518421
